@@ -1,26 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="flex">
+    <LeftSidebar />
+    
+    <!-- Main content area -->
+    <div class="w-3/5">
+      <MiddleSection />
+      <!-- Add other main content here -->
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LeftSidebar from './components/LeftSidebar.vue';
+import MiddleSection from './components/MiddleSection.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    LeftSidebar,
+    MiddleSection,
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
 </style>
