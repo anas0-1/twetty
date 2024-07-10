@@ -81,6 +81,7 @@
         </a>
       </div>
     </div>
+    <div class= "border border-gray-600 h-auto  border-t-0"></div>
   </template>
   
   <script>
