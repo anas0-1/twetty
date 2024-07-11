@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto flex">
+  <div class="container  flex">
     <LeftSidebar />
     <div class="w-3/5 px-4">
       <TweetList />
