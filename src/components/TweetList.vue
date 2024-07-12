@@ -1,12 +1,9 @@
-<!-- src/components/TweetList.vue -->
 <template>
   <div>
     <TweetItem
       v-for="tweet in tweets"
       :key="tweet.id"
       :tweet="tweet"
-      @toggle-like="handleToggleLike"
-      @toggle-retweet="handleToggleRetweet"
     />
   </div>
 </template>
@@ -16,39 +13,24 @@ import TweetItem from './TweetItem.vue';
 
 export default {
   components: {
-    TweetItem
+    TweetItem,
   },
   data() {
     return {
-      tweets: [
-        { id: 1, content: 'Sample tweet content', likes: 0, retweets: 0, liked: false, retweeted: false, /* other properties */ },
-        // Add more tweets as necessary
-      ]
+      tweets: [],
     };
   },
+  async created() {
+    await this.fetchTweets();
+  },
   methods: {
-    handleToggleLike(tweet) {
-      tweet.liked = !tweet.liked; // Toggle liked status
-      if (tweet.liked) {
-        tweet.likes++; // Increment likes
-      } else {
-        tweet.likes--; // Decrement likes
-      }
-      // Perform API call or other actions as needed
+    async fetchTweets() {
+      const response = await fetch('http://localhost:3000/tweets');
+      this.tweets = await response.json();
     },
-    handleToggleRetweet(tweet) {
-      tweet.retweeted = !tweet.retweeted; // Toggle retweeted status
-      if (tweet.retweeted) {
-        tweet.retweets++; // Increment retweets
-      } else {
-        tweet.retweets--; // Decrement retweets
-      }
-      // Perform API call or other actions as needed
+    handleTweetPosted(newTweet) {
+      this.tweets.unshift(newTweet); // Add the new tweet to the beginning of the list
     }
   }
 };
 </script>
-
-<style scoped>
-/* Scoped styles for TweetList component */
-</style>

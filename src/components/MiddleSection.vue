@@ -1,5 +1,5 @@
 <template>
-  <div class="middle-section p-4">
+  <div>
     <!-- Header -->
     <div class="flex">
       <div class="flex-1 m-2">
@@ -16,10 +16,10 @@
     <!-- Tweet Input -->
     <div class="flex">
       <div class="m-2 w-10 py-1">
-        <img class="inline-block h-10 w-10 rounded-full" src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png" alt="Avatar" />
+        <img class="inline-block h-10 w-10 rounded-full" src="" alt="" />
       </div>
       <div class="flex-1 px-2 pt-2 mt-2">
-        <textarea class="bg-transparent text-gray-300 font-medium text-lg w-full border border-gray-600 rounded-lg p-2" rows="2" placeholder="What's happening?"></textarea>
+        <textarea v-model="tweetContent" class="bg-transparent text-gray-300 font-medium text-lg w-full border border-gray-600 rounded-lg p-2" rows="2" cols="50" placeholder="What's happening?"></textarea>
       </div>                    
     </div>
 
@@ -67,7 +67,7 @@
 
       <!-- Tweet Button -->
       <div class="flex-1">
-        <button class="bg-blue-400 mt-5 hover:bg-blue-600 text-white font-bold py-2 px-8 rounded-full mr-8 float-right">
+        <button @click="postTweet" class="bg-blue-400 mt-5 hover:bg-blue-600 text-white font-bold py-2 px-8 rounded-full mr-8 float-right">
           Tweet
         </button>
       </div>
@@ -75,29 +75,48 @@
 
     <!-- Divider -->
     <hr class="border-gray-800 border-2">
-
-    <!-- Tweet List -->
-    <tweet-list></tweet-list>
   </div>
 </template>
 
 <script>
-import TweetList from './TweetList.vue'; // Import TweetList component
-
 export default {
   name: 'MiddleSection',
-  components: {
-    TweetList
+  data() {
+    return {
+      tweetContent: ''
+    };
+  },
+  methods: {
+    async postTweet() {
+      if (!this.tweetContent.trim()) {
+        return;
+      }
+      const newTweet = {
+        content: this.tweetContent,
+        name: 'User Name',
+        handle: '@username',
+        date: new Date().toLocaleDateString(),
+        likes: 0,
+        retweets: 0,
+        hashtags: ['vue', 'jsonserver'],
+      };
+      const response = await fetch('http://localhost:3000/tweets', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newTweet),
+      });
+      if (response.ok) {
+        this.$emit('tweet-posted', newTweet);
+        this.tweetContent = '';
+      }
+    }
   }
 };
 </script>
 
 <style scoped>
-/* Scoped styles */
-.middle-section {
-  padding: 1rem; /* Adjust padding as needed */
-}
-
 /* Dark mode styles */
 .text-gray-200 {
   color: #cbd5e0; /* Adjusted gray for dark mode */
