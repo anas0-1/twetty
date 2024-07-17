@@ -1,5 +1,57 @@
 {
   "tweets": [
-    
+    {
+      "id": "7f75",
+      "content": "a",
+      "name": "Anas Zrigui",
+      "handle": "@Zrigui_anas",
+      "date": "17/07/2024",
+      "likes": 0,
+      "retweets": 0,
+      "hashtags": [
+        "vue",
+        "jsonserver"
+      ]
+    },
+    {
+      "id": "d668",
+      "content": "a",
+      "name": "Anas Zrigui",
+      "handle": "@Zrigui_anas",
+      "date": "17/07/2024",
+      "likes": 0,
+      "retweets": 0,
+      "hashtags": [
+        "vue",
+        "jsonserver"
+      ]
+    },
+    {
+      "id": "fd18",
+      "content": "ha",
+      "name": "Anas Zrigui",
+      "handle": "@Zrigui_anas",
+      "date": "17/07/2024",
+      "likes": 0,
+      "retweets": 0,
+      "hashtags": [
+        "vue",
+        "jsonserver"
+      ]
+    },
+    {
+      "id": "e3e4",
+      "content": "RT @@Zrigui_anas: ha",
+      "name": "Anas_zrigui",
+      "handle": "@AnasZrigui",
+      "date": "17/07/2024",
+      "likes": 1,
+      "retweets": 0,
+      "hashtags": [
+        "retweet",
+        "vue",
+        "jsonserver"
+      ]
+    }
   ]
 }

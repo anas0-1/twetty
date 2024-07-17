@@ -20,17 +20,5 @@ export default {
       tweets: [],
     };
   },
-  async created() {
-    await this.fetchTweets();
-  },
-  methods: {
-    async fetchTweets() {
-      const response = await fetch('http://localhost:3000/tweets');
-      this.tweets = await response.json();
-    },
-    handleTweetPosted(newTweet) {
-      this.tweets.unshift(newTweet); 
-    }
-  }
 };
 </script>

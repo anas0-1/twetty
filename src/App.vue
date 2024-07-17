@@ -2,7 +2,7 @@
   <div class="flex bg-gray-900 text-white">
     <LeftSidebar />
     <div class="w-3/5">
-      <MiddleSection @tweet-posted="handleTweetPosted"/>
+      <MiddleSection />
       <TweetList ref="tweetList"/>
     </div>
     <RightSidebar />
@@ -22,14 +22,6 @@ export default {
     RightSidebar,
     TweetList,
   },
-  methods: {
-    handleTweetPosted(newTweet) {
-      this.$refs.tweetList.handleTweetPosted(newTweet);
-    }
-  }
+ 
 };
 </script>
-
-<style scoped>
-/* Your styles here */
-</style>
