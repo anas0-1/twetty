@@ -1,43 +1,5 @@
 {
   "tweets": [
-    {
-      "id": "1",
-      "name": "John",
-      "handle": "@john",
-      "date": "07/10/2023",
-      "content": "Hello World!",
-      "likes": 0,
-      "retweets": 0,
-      "hashtags": [
-        "hello",
-        "world"
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Jane",
-      "handle": "@jane",
-      "date": "07/11/2023",
-      "content": "Tweeting from Vue.js!",
-      "likes": 0,
-      "retweets": 0,
-      "hashtags": [
-        "vuejs",
-        "tweet"
-      ]
-    },
-    {
-      "id": "6e3f",
-      "content": "hello",
-      "name": "User Name",
-      "handle": "@username",
-      "date": "12/07/2024",
-      "likes": 0,
-      "retweets": 0,
-      "hashtags": [
-        "vue",
-        "jsonserver"
-      ]
-    }
+    
   ]
 }

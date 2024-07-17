@@ -28,7 +28,3 @@
   };
   </script>
   
-  <style scoped>
-  /* Scoped styles for trending tweet component */
-  </style>
-  

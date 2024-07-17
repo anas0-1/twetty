@@ -29,7 +29,7 @@ export default {
       this.tweets = await response.json();
     },
     handleTweetPosted(newTweet) {
-      this.tweets.unshift(newTweet); // Add the new tweet to the beginning of the list
+      this.tweets.unshift(newTweet); 
     }
   }
 };

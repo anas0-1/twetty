@@ -44,7 +44,7 @@
     </div>
   </div>
 
-  <!-- Whom to follow section -->
+  <!-- follow section -->
   <div class="max-w-sm rounded-lg bg-gray-800 overflow-hidden shadow-lg mt-1">
     <div class="flex">
       <div class="flex-1 m-2">
@@ -113,15 +113,12 @@ export default {
         { category: 'Music', title: '#TopHits2023', tweets: '3,241' },
       ],
       usersToFollow: [
-        { avatar: 'https://via.placeholder.com/50', name: 'John Doe', handle: '@johndoe' },
-        { avatar: 'https://via.placeholder.com/50', name: 'Jane Smith', handle: '@janesmith' },
-        { avatar: 'https://via.placeholder.com/50', name: 'Bob Johnson', handle: '@bobjohnson' },
+        { avatar: 'https://via.placeholder.com/50', name: 'User 1', handle: '@1User' },
+        { avatar: 'https://via.placeholder.com/50', name: 'User 2', handle: '@2User' },
+        { avatar: 'https://via.placeholder.com/50', name: 'User 3', handle: '@3User' },
       ]
     };
   }
 };
 </script>
 
-<style scoped>
-/* Scoped styles for RightSidebar component */
-</style>
